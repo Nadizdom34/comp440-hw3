@@ -52,7 +52,7 @@ Which lookup would you have done differently, and how? If none, which one surpri
 
 Describe Wikidata briefly. Why may it be important to this task?
 
-> Wikidata consists of a free database of facts, 
+> Wikidata consists of a free database of facts, terefore it stores each fact as three parts, an item, a property, and a value. It is important in this task because from Wikidata we could gather te composers date of birth.
 
 # Part 1: How the agent works
 

@@ -1,0 +1,100 @@
+{
+  "step": "1a",
+  "title": "Design the loop",
+  "session_id": null,
+  "conversations": [
+    "e03bd9c0-28c6-43f5-9c01-7da579d88ce8"
+  ],
+  "complete": false,
+  "checkpoints": [
+    {
+      "text": "Your outline is in WRITEUP.md",
+      "reached": false
+    },
+    {
+      "text": "Your loop in my_loop.py passes every rule of the check",
+      "reached": false
+    },
+    {
+      "text": "Your answers are in WRITEUP.md",
+      "reached": false
+    }
+  ],
+  "answers": [
+    {
+      "question": "Write your outline of the loop in the code block: what it remembers, what it repeats, and every way it stops.",
+      "answer": "",
+      "written_by": null
+    },
+    {
+      "question": "List each thing your loop remembers from one turn to the next, and say what would go wrong without it.",
+      "answer": "",
+      "written_by": null
+    },
+    {
+      "question": "Now open `reference_loop.py` and compare it with your loop. Describe one difference in implementation and the resulting effects on agent behavior.",
+      "answer": "",
+      "written_by": null
+    }
+  ],
+  "record": [
+    {
+      "kind": "ran",
+      "text": "Listed files",
+      "status": "ok",
+      "file": null,
+      "time": "2026-11-19T18:39:18-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "In this part you build and study the agent. You design its loop, check one claim yourself, watch it work on your 12 development claims, write its instructions, and then start the full run on your 100 evaluation claims. It should take a little under 3 hours.",
+      "time": "2026-11-19T18:39:34-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Listed files",
+      "status": "ok",
+      "file": null,
+      "time": "2026-11-19T18:39:35-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "In this step you design the agent's loop. You write an outline of its logic in plain words, and Claude translates your outline into Python. The loop asks the model for lookups, runs the lookups it chooses, sends back what they return, and stops.",
+      "time": "2026-11-19T18:39:48-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Listed files",
+      "status": "ok",
+      "file": null,
+      "time": "2026-11-19T18:39:50-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "In your editor, write your outline of the loop in the block under 1a in WRITEUP.md.",
+      "time": "2026-11-19T18:40:03-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Listed files",
+      "status": "ok",
+      "file": null,
+      "time": "2026-11-19T18:40:05-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Ran grep",
+      "status": "ok",
+      "file": null,
+      "time": "2026-11-19T18:40:09-06:00"
+    }
+  ],
+  "told_the_page": [
+    {
+      "time": "2026-11-19T18:40:09-06:00",
+      "kind": "status",
+      "text": "Waiting for your outline in WRITEUP.md"
+    }
+  ],
+  "turns": 4
+}

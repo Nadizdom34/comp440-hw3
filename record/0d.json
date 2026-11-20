@@ -29,7 +29,7 @@
     },
     {
       "question": "Describe Wikidata briefly. Why may it be important to this task?",
-      "answer": "Wikidata consists of a free database of facts,",
+      "answer": "Wikidata consists of a free database of facts, terefore it stores each fact as three parts, an item, a property, and a value. It is important in this task because from Wikidata we could gather te composers date of birth.",
       "written_by": "the student"
     }
   ],
@@ -55,6 +55,18 @@
         "Your answers are in WRITEUP.md"
       ],
       "time": "2026-11-19T18:37:02-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "ok step complete",
+      "time": "2026-11-19T18:38:29-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Show the 0d section of WRITEUP.md",
+      "status": "ok",
+      "file": null,
+      "time": "2026-11-19T18:38:31-06:00"
     }
   ],
   "told_the_page": [
@@ -74,5 +86,5 @@
       "text": "Waiting for your 0d answers in WRITEUP.md"
     }
   ],
-  "turns": 2
+  "turns": 3
 }

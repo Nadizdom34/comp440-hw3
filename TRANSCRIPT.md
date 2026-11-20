@@ -9,7 +9,7 @@ Claude's reasoning is left out. Don't edit it by hand; the page writes it again.
 <!-- transcript-session: e03bd9c0-28c6-43f5-9c01-7da579d88ce8 | 2026-11-19T22:00:41.871Z -->
 ## Session `e03bd9c0` — 2026-11-19 22:00:41
 
-*20 user turns. Tool output shortened; reasoning omitted.*
+*25 user turns. Tool output shortened; reasoning omitted.*
 
 **User:**
 Start step 0a.
@@ -640,6 +640,195 @@ The agent's `wikidata` tool sends Wikidata one question about one property of on
 
 Why Wikidata may matter for this task is for you to say. Write it under 0d in `WRITEUP.md`, in your editor.
 
+**User:**
+ok step complete
+
+**Claude:**
+- 🔧 `Bash` — grep -n -A 12 "^## 0d" WRITEUP.md
+
+  ```
+  43:## 0d. Run the agent and read its trace
+  44-
+  45-In one or two sentences, how did the agent get from the claim to its verdict? Point to the trace entries by their numbers.
+  46-
+  47-> It first did a search in it's Number 1 trace, and it's query was "Persian Surgery Dervishes composer", then the second trace included a read of the page "Persian Surgery Dervishes" to find the...
+  48-
+  49-Which lookup would you have done differently, and how? If none, which one surprised you?
+  50-
+  51-> I would changed the first lookup trace of search, specifically to re-word it as a question to get a more related page, "Who is the composer of Persian Surgey Dervishes and when were they born"...
+  52-
+  53-Describe Wikidata briefly. Why may it be important to this task?
+  54-
+  ... (1 more line)
+  ```
+
+I've looked at `WRITEUP.md`, and all three 0d answers are filled in. The agent's run is saved in `runs/part0/`, so this step is done.
+
+A note on words: the homework calls each numbered line an *entry* and the whole list for one claim the *trace*. So "entry 1" is the homework's word where your first answer says "Number 1 trace". Whether to change it is up to you.
+
+That finishes every step of Part 0. The page commits "Part 0 done" by itself once it sees them all complete.
+
+The next step is 1a, "Design the loop." To start it, go to step 1a on the homework page and either paste its whole prompt into this chat or use its command to open a new session.
+
+**User:**
+Start step 1a.
+
+**Claude:**
+- 🔧 `Bash` — ls .workbench/
+
+  ```
+  0a.json
+  0a.md
+  0b.json
+  0b.md
+  0c.json
+  0c.md
+  0d.json
+  0d.md
+  guard.json
+  guard.py
+  page.jsonl
+  page.py
+  ... (3 more lines)
+  ```
+
+There's no 1a brief in the homework folder yet, so I can't start 1a. The page creates the brief when you copy or open the step's prompt or command there.
+
+On the homework page, go to step 1a, "Design the loop," and copy its prompt or its command. Then either:
+
+- paste the whole prompt into this chat (it begins "Start step 1a." and asks me to read `.workbench/1a.md`), or
+- run the command in a terminal tab to open a new session for 1a.
+
+Once the brief is there, I'll take you through 1a.
+
+**User:**
+In this part you build and study the agent. You design its loop, check one claim yourself, watch it work on your 12 development claims, write its instructions, and then start the full run on your 100 evaluation claims. It should take a little under 3 hours.
+
+**Claude:**
+- 🔧 `Bash` — ls .workbench/
+
+  ```
+  0a.json
+  0a.md
+  0b.json
+  0b.md
+  0c.json
+  0c.md
+  0d.json
+  0d.md
+  guard.json
+  guard.py
+  page.jsonl
+  page.py
+  ... (3 more lines)
+  ```
+
+That text is the summary for all of Part 1. It isn't 1a's prompt, and there's still no 1a brief in the homework folder, so I can't start 1a yet.
+
+Part 1 does take a little under 3 hours, as the summary says. It covers five steps: 1a, design the loop; 1b, be the agent; 1c, watch the agent work; 1d, write the agent's instructions; and 1e, start the full run and predict.
+
+To start 1a, go to step 1a, "Design the loop," on the homework page. Find its prompt or its command there (usually next to a copy button) and copy it. Then either:
+
+- paste the whole prompt into this chat. It begins "Start step 1a." and asks me to read `.workbench/1a.md`.
+- or run the command in a terminal tab to open a new session for 1a.
+
+**User:**
+In this step you design the agent's loop. You write an outline of its logic in plain words, and Claude translates your outline into Python. The loop asks the model for lookups, runs the lookups it chooses, sends back what they return, and stops.
+
+**Claude:**
+- 🔧 `Bash` — ls .workbench/
+
+  ```
+  0a.json
+  0a.md
+  0b.json
+  0b.md
+  0c.json
+  0c.md
+  0d.json
+  0d.md
+  guard.json
+  guard.py
+  page.jsonl
+  page.py
+  ... (3 more lines)
+  ```
+
+That's 1a's summary from the page, but the 1a brief still isn't in the homework folder, so I can't start 1a yet. Pasting the summary doesn't create the brief. The page creates it only when you copy the step's prompt or command.
+
+On the homework page, under step 1a:
+
+1. Find the prompt that begins "Start step 1a. Read .workbench/1a.md ..." or the command that begins `claude`. Each usually has a copy button next to it.
+2. Click the copy button, then paste here in one of two ways:
+   - Paste the prompt into this chat, or
+   - paste the command at a terminal prompt to open a new session for 1a. Don't paste it here.
+
+If you can't find either one on the page, ask on `#comp440-f26` on Slack.
+
+**User:**
+In your editor, write your outline of the loop in the block under 1a in WRITEUP.md.
+
+**Claude:**
+- 🔧 `Bash` — ls .workbench/
+
+  ```
+  0a.json
+  0a.md
+  0b.json
+  0b.md
+  0c.json
+  0c.md
+  0d.json
+  0d.md
+  1a.json
+  1a.md
+  guard.json
+  guard.py
+  ... (5 more lines)
+  ```
+
+- 🔧 `Read` — /Users/logan/Documents/GitHub/comp440-hw3/.workbench/1a.md
+
+  ```
+  253	# This session: one step of the assignment
+  254	
+  255	You help with one step, and only this one: 1a, "Design the loop", in Part 1 (How the agent works).
+  256	What this step is, as the page says it under the step's title: In this step you design the agent's loop. You write an outline of its logic in plain words, and Claude translates your outline int...
+  257	This step takes about 45 minutes, as the page says. Say so if the student asks.
+  258	The student talks to you in a terminal. Beside it, a web page shows every step of the assignment,
+  259	each with its own Claude Code session, and this step's instructions, which say:
+  260	
+  261	<step-instructions>
+  262	In this step you design the agent's loop. You write an outline of its logic in plain words, and Claude
+  263	translates your outline into Python. The loop asks the model for lookups, runs the lookups it chooses,
+  264	sends back what they return, and stops.
+  ... (367 more lines)
+  ```
+
+- 🔧 `Bash` — python3 .workbench/page.py 1a status "Waiting for your outline in WRITEUP.md"; grep -n -A 20 "^## 1a" WRITEUP.md
+
+  ````
+  The page now says: Waiting for your outline in WRITEUP.md
+  59:## 1a. Design the loop
+  60-
+  61-Your loop should repeatedly call the model with the message history so far, and ask for its next step. It should check whether the model has given an answer yet. If not, it should make the looku...
+  62-
+  63-The Background and an example outline are under 1a on the homework page, and in [instructions/part1.md](instructions/part1.md#1a-design-the-loop).
+  64-
+  65-Write your outline of the loop in the code block: what it remembers, what it repeats, and every way it stops.
+  66-
+  67-```
+  68-```
+  69-
+  ... (10 more lines)
+  ````
+
+I'm now on step 1a. The homework page has created its brief, and I've read it.
+
+In this step you design the agent's loop. You write an outline of its logic in plain words, and I translate your outline into Python. The step takes about 45 minutes.
+
+I checked `WRITEUP.md`, and the code block under 1a is still empty. Read the Background on the homework page first. Then write your outline in that block, in your editor, one action per line. Indent whatever happens inside a repeat or an if. When it's saved, ask me to translate it into `my_loop.py`.
+
 <!-- end-session: e03bd9c0-28c6-43f5-9c01-7da579d88ce8 -->
 
 # 0b. Ask the model to assess a claim without tools
@@ -653,6 +842,10 @@ This step was done in the conversation under 0a, session `e03bd9c0`, from the me
 # 0d. Run the agent and read its trace
 
 This step was done in the conversation under 0a, session `e03bd9c0`, from the message “Start step 0d.”
+
+# 1a. Design the loop
+
+This step was done in the conversation under 0a, session `e03bd9c0`, from the message “Start step 1a.”
 
 # Other Claude sessions in this folder
 
