@@ -1,6 +1,6 @@
 # COMP 440 HW3 write-up
 
-Name:
+Name: Nadezhda Dominguez Salinas
 
 Type each answer after the `>` under its question. An answer can run over several lines, but a blank line
 ends it: to start a new paragraph, put a line with just `>` between the two. In a table, fill every cell
@@ -28,31 +28,31 @@ There is nothing to write for this step except your name, after `Name:` at the t
 
 What verdict did the model give (*supported*, *refuted* or *doesn't say*), and what reason did it give? Quote the lines of the output that show them.
 
->
+> The verdict it provides is that "doesn't say", the reason was " I cannot confirm from memory who composed "Persian Surgery Dervishes" or find a Wikipedia article that gives that composer's birth date, so I can't verify the claim either way".
 
 ## 0c. Give it one search
 
 Which Wikipedia page did it read? Quote the line of the output that shows it.
 
->
+>"Page: Persian Surgery Dervishes\n\nPersian Surgery Dervishes is a recording of two live solo electric organ concerts, the first held in Los Angeles on 18 April 1971 and the second in Paris on 24 May 1972, by the avant-garde minimalist composer Terry Riley, following his A Rainbow in Curved Air and In C.\n\nSections: Background and release, Music, References, External links"
 
 Did that page settle the claim correctly? If not, why do you think the search led there?
 
->
+>No it did not because the verdict was "doesn't say" implying that the page did not resolve the claim's verdict. I think the search led there because the first three words of the search matched the title of the page, of "Persian Surgery Dervishes".
 
 ## 0d. Run the agent and read its trace
 
 In one or two sentences, how did the agent get from the claim to its verdict? Point to the trace entries by their numbers.
 
->
+> It first did a search in it's Number 1 trace, and it's query was "Persian Surgery Dervishes composer", then the second trace included a read of the page "Persian Surgery Dervishes" to find the composer Terry Riley, third trace was also a read but to a different page titled "Terry Riley" that stated when they were born, where in the fourth trace was the answer that stated the verdict was supported.
 
 Which lookup would you have done differently, and how? If none, which one surprised you?
 
->
+> I would changed the first lookup trace of search, specifically to re-word it as a question to get a more related page, "Who is the composer of Persian Surgey Dervishes and when were they born". This is a a very direct question that would hopefully result in a page that holds the answer sooner than in this example.
 
 Describe Wikidata briefly. Why may it be important to this task?
 
->
+> Wikidata consists of a free database of facts, 
 
 # Part 1: How the agent works
 

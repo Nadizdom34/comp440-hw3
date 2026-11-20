@@ -1,0 +1,130 @@
+{
+  "step": "0c",
+  "title": "Give it one search",
+  "session_id": null,
+  "conversations": [
+    "e03bd9c0-28c6-43f5-9c01-7da579d88ce8"
+  ],
+  "complete": true,
+  "checkpoints": [
+    {
+      "text": "The one-search baseline's answer is saved in runs/part0/",
+      "reached": true
+    },
+    {
+      "text": "Your answers are in WRITEUP.md",
+      "reached": true
+    }
+  ],
+  "answers": [
+    {
+      "question": "Which Wikipedia page did it read? Quote the line of the output that shows it.",
+      "answer": "\"Page: Persian Surgery Dervishes\\n\\nPersian Surgery Dervishes is a recording of two live solo electric organ concerts, the first held in Los Angeles on 18 April 1971 and the second in Paris on 24 May 1972, by the avant-garde minimalist composer Terry Riley, following his A Rainbow in Curved Air and In C.\\n\\nSections: Background and release, Music, References, External links\"",
+      "written_by": "the student"
+    },
+    {
+      "question": "Did that page settle the claim correctly? If not, why do you think the search led there?",
+      "answer": "No it did not because the verdict was \"doesn't say\" implying that the page did not resolve the claim's verdict. I think the search led there because the first three words of the search matched the title of the page, of \"Persian Surgery Dervishes\".",
+      "written_by": "the student"
+    }
+  ],
+  "record": [
+    {
+      "kind": "ran",
+      "text": "Listed files",
+      "status": "ok",
+      "file": null,
+      "time": "2026-11-19T16:14:28-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "run the one-search baseline on the claim",
+      "time": "2026-11-19T16:14:40-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Ran check.py --method one-search",
+      "status": "ok",
+      "file": "runs/part0/one-search-1795126483.json",
+      "time": "2026-11-19T16:14:42-06:00"
+    },
+    {
+      "kind": "said",
+      "verdict": "doesn't say",
+      "reason": "The text identifies Terry Riley as the composer of Persian Surgery Dervishes but gives no information about his birth date, so the June 24, 1935 claim can be neither confirmed nor refuted.",
+      "lookups": 2,
+      "what": "Ran check.py --method one-search",
+      "file": "runs/part0/one-search-1795126483.json",
+      "expected": null,
+      "reached": [
+        "The one-search baseline's answer is saved in runs/part0/",
+        "Your answers are in WRITEUP.md"
+      ],
+      "time": "2026-11-19T16:14:47-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "ok next step",
+      "time": "2026-11-19T16:23:15-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Show the 0c section of WRITEUP.md",
+      "status": "ok",
+      "file": null,
+      "time": "2026-11-19T16:23:17-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "In this step you find out how the agent gets from the claim to a verdict when it chooses its own lookups.",
+      "time": "2026-11-19T16:25:08-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Listed files",
+      "status": "ok",
+      "file": null,
+      "time": "2026-11-19T16:25:09-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "run the agent on the claim",
+      "time": "2026-11-19T16:25:33-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Ran check.py --method agent",
+      "status": "ok",
+      "file": "runs/part0/agent-1795127136.json",
+      "time": "2026-11-19T16:25:35-06:00"
+    },
+    {
+      "kind": "said",
+      "verdict": "supported",
+      "reason": "\"Persian Surgery Dervishes\" is a Terry Riley recording, and Terry Riley's Wikipedia article gives his birth date as June 24, 1935, so the claim is supported.",
+      "lookups": 3,
+      "what": "Ran check.py --method agent",
+      "file": "runs/part0/agent-1795127136.json",
+      "expected": null,
+      "time": "2026-11-19T16:25:40-06:00"
+    }
+  ],
+  "told_the_page": [
+    {
+      "time": "2026-11-19T16:14:31-06:00",
+      "kind": "status",
+      "text": "Waiting for you to ask for the one-search run"
+    },
+    {
+      "time": "2026-11-19T16:14:42-06:00",
+      "kind": "status",
+      "text": "Running the one-search baseline on the claim"
+    },
+    {
+      "time": "2026-11-19T16:14:49-06:00",
+      "kind": "status",
+      "text": "Waiting for your 0c answers in WRITEUP.md"
+    }
+  ],
+  "turns": 5
+}
