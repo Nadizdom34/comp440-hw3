@@ -1,0 +1,47 @@
+{
+  "step": "1e",
+  "title": "Start the full run, and predict",
+  "session_id": null,
+  "conversations": [],
+  "complete": true,
+  "checkpoints": [
+    {
+      "text": "The full run has started",
+      "reached": true
+    },
+    {
+      "text": "Your predictions and answer are in WRITEUP.md",
+      "reached": true
+    }
+  ],
+  "answers": [
+    {
+      "question": "Predict the share of claims each version will get right (its verdict matches the dataset's label), as a percentage. A guess is fine; the reasons are what I grade.",
+      "answer": "No tools | 40 | 20 | 10 | Having no tools is more dificult at proving a claim, therefore I placed the percentage of claims right with no tools to be less than 50 percent, and it will decrease with the more artices involved as the model is only having what it remembers from its training, so it is more likely to be incorrect than the one search or agent.\nOne search | 50 | 45 | 30 | One search can have some evidence to help prove a claim is right, a claim that has less articles involved, will have a higher claim right for a one search, because a claim that involves 4 articles and only gets one search has less of a chance of collecting evidence to prove claim is correct.\nAgent | 90 | 80 | 70 | I think the agent will do a good job at getting the claim right when it has less articles involved in the claim because it has less things to validate from, so it is more specific, but the more articles involved in the claim might be more difficult to focus on what evidence it needs for claim",
+      "written_by": "the student"
+    },
+    {
+      "question": "How many lookups will the agent make per claim, on average? Why?",
+      "answer": "I predict that the agent will make 9 lookups on average. The reason",
+      "written_by": "the student"
+    }
+  ],
+  "record": [
+    {
+      "kind": "mark",
+      "reached": [
+        "The full run has started",
+        "Your predictions and answer are in WRITEUP.md"
+      ],
+      "time": "2026-11-21T14:19:56-06:00"
+    }
+  ],
+  "told_the_page": [
+    {
+      "time": "2026-11-21T14:18:30-06:00",
+      "kind": "status",
+      "text": "Waiting for you to start the full run"
+    }
+  ],
+  "turns": 0
+}

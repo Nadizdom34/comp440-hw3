@@ -1,0 +1,57 @@
+{
+  "step": "1c",
+  "title": "Watch the agent work",
+  "session_id": null,
+  "conversations": [],
+  "complete": true,
+  "checkpoints": [
+    {
+      "text": "The agent's run on your 12 development claims is saved",
+      "reached": true
+    },
+    {
+      "text": "Your table and answer are in WRITEUP.md",
+      "reached": true
+    }
+  ],
+  "answers": [
+    {
+      "question": "List the three traces you read closely. At least one should be a claim the agent got wrong (if it got any wrong).",
+      "answer": "1 | Myles Kennedy and Robert Palmer, share the mutual occupations of musician, singer, songwriter | 2 articles | Yes it matched the dataset's label. | Yes it got there for a good reason as its qouted evidence are real and they match each of the two person's background and profession, therefore relevant about the claim that Myles and Robert share mutual oocupations.\n2 | The quartets that released One Thousand Years of Trouble and Vector were both a rock band. | 3 articles | Yes it matches the dataset label of not supported as the agent's verdict is refuted. | Yes it got there for good reason because it states the claim is refuted for two reasons of neither band being a quartet and that one is a rock dance band verses the other which is more of a progressive metal band.\n3 | This Singapore freestyle was referenced in the song Detail (record producer) is known for producing. They were undefeated since the Athens games with 28 medals. | 4 articles | This does not match because the datasets label is not supported, meanwhile the agent gave no verdict. | No it did not get there for good reason and the agent ran out of steps. The traces for this claim were kind of all over the place going abck and forth of searching song lyrics to then someone with 28 medals.",
+      "written_by": "the student"
+    },
+    {
+      "question": "Which trace did you find most interesting, and what did the agent do well or badly in it?",
+      "answer": "The trace I found the most interesting was in the second claim of the lookup 6 of the agent where it read \"Vector(band)\". This was interesting because in the claim \"Vector\" is not a band itself but rather an album, therefore it is interesting on why the agent would chose to read this section. I think it should have pursued a different lookup, especially because an earlier lookup of search \"Vector album band released\" gave a response that Vector is a studio album by Haken, therefore no further information on this part of the claim was need, aka unecessary lookup on behalf of the agent.",
+      "written_by": "the student"
+    }
+  ],
+  "record": [
+    {
+      "kind": "mark",
+      "reached": [
+        "The agent's run on your 12 development claims is saved",
+        "Your table and answer are in WRITEUP.md"
+      ],
+      "time": "2026-11-21T12:50:21-06:00"
+    }
+  ],
+  "told_the_page": [
+    {
+      "time": "2026-11-21T12:48:59-06:00",
+      "kind": "status",
+      "text": "Waiting for you to ask for the run on 12 claims"
+    },
+    {
+      "time": "2026-11-21T12:49:28-06:00",
+      "kind": "status",
+      "text": "Running the agent on your 12 development claims"
+    },
+    {
+      "time": "2026-11-21T12:50:23-06:00",
+      "kind": "status",
+      "text": "Run saved; waiting for your three traces and table"
+    }
+  ],
+  "turns": 0
+}

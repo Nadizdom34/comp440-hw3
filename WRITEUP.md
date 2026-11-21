@@ -65,15 +65,29 @@ The Background and an example outline are under 1a on the homework page, and in 
 Write your outline of the loop in the code block: what it remembers, what it repeats, and every way it stops.
 
 ```
+Remember: The message history (so far), what is the total lookup limit (12 in this case), and which number of lookup we are currently on (none yet)
+
+while Claim is non empty:
+    Call the model with the message history so far, and ask for its next step
+    If the model has an answer:
+        Reply with that answer
+        Stop
+    Else:
+        If the lookup count is at the limit or one above the limit:
+            Reply with "No Verdict"
+            Stop
+        For each lookup asked for
+            Add 1 to the lookup count
+        Once every lookup has its result add what they returned to the message history
 ```
 
 List each thing your loop remembers from one turn to the next, and say what would go wrong without it.
 
->
+> Each thing that my loop remembers from one turn to the next is the message history (so far), the total lookup limit (this case we are given 12), and the number we are currently on out of the lookup limit. Without the lookup limit then the model would just continously continue to run until it comes up with an answer but this would delay a reply and add complexity if we have alot of claims, so having a limit allows us to constrain the model. Additionally we must have message history incoporated so the model can troubleshoot what it already attempted and work from there, instead of starting from a blank canvas everytime to validate a claim.
 
 Now open `reference_loop.py` and compare it with your loop. Describe one difference in implementation and the resulting effects on agent behavior.
 
->
+> Comparing both loops I can see that they are kind of similiar in structure except the referene loop looks more concise. One difference in the implementation is that in my loop I put the logic of "for each lookup asked for (by the model)" in the else branch if the model has no answer, while the reference loop does not have the logic of whether or not the model asked for a lookup, it assumes it does, so the resulting effect on the agent is that it would loop over the reply.lookups even if there was not really any lookups asked for by the model.
 
 ## 1b. Be the agent
 
@@ -83,11 +97,20 @@ List your lookups, in order. Ask Claude to paste every column but the last from 
 
 | # | Tool | What you asked for | Why you chose it |
 |---|---|---|---|
-| 1 | | | |
+| 1 | search | "Where is Vic & Anthony's steakhouse located and what is the history behind the location" |I chose this as the first lookup to try to get a sense of whether the claim that the resturaunt was insife the American casino was correct.|
+| 2 | search | "Is Vic & Anthony's Steakhouse located at the American Casino?" | From the first lookup, none of the results helped validate the claim, so I wanted to come up with a more specific search that moight lead to a clearer answer, so I wanted to ask a very binary Yes or No question to the location. |
+| 3 | read | "Landry's" (no section) | I chose the read tool because from the second lookup the first result seemed to match the description of Landry's, Inc company claim, so I wanted to look into this company.|
+| 4 | read | "Landry's", section "Golden Nugget casinos" | I chose to keep reading into this section because I was confused on why American casino was not an option, and instead only found Golden Nugget casinos. |
+| 5 | wikidata | entity "Vic & Anthony's Steakhouse", property "location and owner history" | My previous lookups were not very good at validating the claim, so I attemped to pivot to wikidata. |
+| 6 | search | "Who owns Vic & Anthony's Steakhouse" | I wanted a clear answer on the owner of the resturaunt.|
+| 7 | search | "Is it true that Vic & Anthony's Steakhouse is located at American Casino?" | Next, after validating that Landry's, Inc owns this restuaurnt I move to focus on location of it.|
+| 8 | read | "List of restaurants in the Las Vegas Valley" (no section) | I did this lookup because I thought the list of restuarants would have a location attatched to Vic & Anthony's Steakhouse.|
+| 9 | search | "restuaruants located at the American Casino" |I chose the route of backtracking whether or not the resturaunt was inside American casino.|
+| 10 | search | "Is Vic & Anthony's Steakhouse inside of a casino?" |Lastly, I chose this because the other lookups were unclear of the location, so I wanted to start off again of whether it was even inside of a casino to begin with. |
 
 What is your verdict on the claim, and which sentence or sentences from what you read is it based on?
 
->
+> My verdict is that the claim is refuted by the lookups the model made. Specifically, I read in lookup 7 the first result was "List of restaurants in Las Vegas Valley: Vic & Anthony's Steakhouse", and in another lookup it states Vic & Anthony's is an Americna steakhouse restaurant chain with locations in Downtown Houston, and inside the Golden Nugget Casinos in Las Vegas, Atlantic" , therefore refuting that it is located at the American Casino.
 
 ## 1c. Watch the agent work
 
@@ -95,19 +118,19 @@ List the three traces you read closely. At least one should be a claim the agent
 
 | # | Claim (first few words) | Articles | Did it match the dataset's label? | Did it get there for a good reason? Why or why not |
 |---|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
+| 1 | Myles Kennedy and Robert Palmer, share the mutual occupations of musician, singer, songwriter|2 articles | Yes it matched the dataset's label.| Yes it got there for a good reason as its qouted evidence are real and they match each of the two person's background and profession, therefore relevant about the claim that Myles and Robert share mutual oocupations.|
+| 2 | The quartets that released One Thousand Years of Trouble and Vector were both a rock band.|3 articles | Yes it matches the dataset label of not supported as the agent's verdict is refuted.  | Yes it got there for good reason because it states the claim is refuted for two reasons of neither band being a quartet and that one is a rock dance band verses the other which is more of a progressive metal band.|
+| 3 | This Singapore freestyle was referenced in the song Detail (record producer) is known for producing. They were undefeated since the Athens games with 28 medals.| 4 articles| This does not match because the datasets label is not supported, meanwhile the agent gave no verdict.| No it did not get there for good reason and the agent ran out of steps. The traces for this claim were kind of all over the place going abck and forth of searching song lyrics to then someone with 28 medals.|
 
 Which trace did you find most interesting, and what did the agent do well or badly in it?
 
->
+> The trace I found the most interesting was in the second claim of the lookup 6 of the agent where it read "Vector(band)". This was interesting because in the claim "Vector" is not a band itself but rather an album, therefore it is interesting on why the agent would chose to read this section. I think it should have pursued a different lookup, especially because an earlier lookup of search "Vector album band released" gave a response that Vector is a studio album by Haken, therefore no further information on this part of the claim was need, aka unecessary lookup on behalf of the agent.
 
 ## 1d. Write the agent's instructions
 
 What changed in the agent's traces after you wrote your instructions? Give one claim as an example.
 
->
+> The main thing that changed in the agent's traces is the amount of entries that it has. For example, I looked into the claim "Scotland holds both this landmark and Cowie Castle. The landmark is located in East Catterline". The agent's trace in the before run has 13 entries: 12 lookups and 1 answer, versus the after run which has only 7 entries: 6 lookups and 1 answer. 
 
 ## 1e. Start the full run, and predict
 
@@ -115,13 +138,13 @@ Predict the share of claims each version will get right (its verdict matches the
 
 | Version | 2 articles | 3 articles | 4 articles | Why you think so |
 |---|---|---|---|---|
-| No tools | | | | |
-| One search | | | | |
-| Agent | | | | |
+| No tools |40 | 20|10 | Having no tools is more dificult at proving a claim, therefore I placed the percentage of claims right with no tools to be less than 50 percent, and it will decrease with the more artices involved as the model is only having what it remembers from its training, so it is more likely to be incorrect than the one search or agent.|
+| One search | 50|45 | 30| One search can have some evidence to help prove a claim is right, a claim that has less articles involved, will have a higher claim right for a one search, because a claim that involves 4 articles and only gets one search has less of a chance of collecting evidence to prove claim is correct.|
+| Agent | 90| 80|70| I think the agent will do a good job at getting the claim right when it has less articles involved in the claim because it has less things to validate from, so it is more specific, but the more articles involved in the claim might be more difficult to focus on what evidence it needs for claim|
 
 How many lookups will the agent make per claim, on average? Why?
 
->
+> I predict that the agent will make 9 lookups on average. The reason
 
 # Part 2: The agent against the baselines
 

@@ -1,0 +1,10 @@
+{"tool": "search", "input": {"query": "Where is Vic & Anthony's steakhouse located and what is the history behind the location"}}
+{"tool": "search", "input": {"query": "Is Vic & Anthony's Steakhouse located at the American Casino?"}}
+{"tool": "read", "input": {"title": "Landry's", "section": null}}
+{"tool": "read", "input": {"title": "Landry's", "section": "Golden Nugget casinos"}}
+{"tool": "wikidata", "input": {"entity": "Vic & Anthony's Steakhouse", "property": "location and owner history"}}
+{"tool": "search", "input": {"query": "Who owns Vic & Anthony's Steakhouse"}}
+{"tool": "search", "input": {"query": "Is it true that Vic & Anthony's Steakhouse is located at American Casino?"}}
+{"tool": "read", "input": {"title": "List of restaurants in the Las Vegas Valley", "section": null}}
+{"tool": "search", "input": {"query": "restuaruants located at the American Casino"}}
+{"tool": "search", "input": {"query": "Is Vic & Anthony's Steakhouse inside of a casino?"}}

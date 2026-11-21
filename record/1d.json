@@ -1,0 +1,164 @@
+{
+  "step": "1d",
+  "title": "Write the agent's instructions",
+  "session_id": null,
+  "conversations": [
+    "e03bd9c0-28c6-43f5-9c01-7da579d88ce8"
+  ],
+  "complete": true,
+  "checkpoints": [
+    {
+      "text": "Your own instructions are in instructions.md, and say: how to break a claim into pieces; when to use wikidata; when to stop; when to answer \"doesn't say\"",
+      "reached": true
+    },
+    {
+      "text": "The second run on your 12 development claims is saved",
+      "reached": true
+    },
+    {
+      "text": "Your answer is in WRITEUP.md",
+      "reached": true
+    }
+  ],
+  "answers": [
+    {
+      "question": "What changed in the agent's traces after you wrote your instructions? Give one claim as an example.",
+      "answer": "The main thing that changed in the agent's traces is the amount of entries that it has. For example, I looked into the claim \"Scotland holds both this landmark and Cowie Castle. The landmark is located in East Catterline\". The agent's trace in the before run has 13 entries: 12 lookups and 1 answer, versus the after run which has only 7 entries: 6 lookups and 1 answer.",
+      "written_by": "the student"
+    }
+  ],
+  "record": [
+    {
+      "kind": "ran",
+      "text": "Listed files",
+      "status": "error",
+      "file": null,
+      "time": "2026-11-21T13:54:35-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Listed files",
+      "status": "ok",
+      "file": null,
+      "time": "2026-11-21T13:54:37-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "ok i made some additions to the instructions.md am i missing anything",
+      "time": "2026-11-21T14:05:51-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Looked at a git diff",
+      "status": "ok",
+      "file": null,
+      "reached": [
+        "Your own instructions are in instructions.md, and say: how to break a claim into pieces; when to use wikidata; when to stop; when to answer \"doesn't say\""
+      ],
+      "time": "2026-11-21T14:05:53-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "ok go ahead and run the agent on my 12 development claims again",
+      "time": "2026-11-21T14:06:22-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Ran evaluate.py data/dev.jsonl --methods agent",
+      "status": "ok",
+      "file": null,
+      "reached": [
+        "The second run on your 12 development claims is saved"
+      ],
+      "time": "2026-11-21T14:06:24-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "im confused when i put run it says A and B are the same run?",
+      "time": "2026-11-21T14:09:18-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "I see I updated it it saus B minus A no change for all",
+      "reached": [
+        "Your answer is in WRITEUP.md"
+      ],
+      "time": "2026-11-21T14:10:01-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "ok i answered 1d",
+      "time": "2026-11-21T14:14:26-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Show the 1d section of WRITEUP.md",
+      "status": "ok",
+      "file": null,
+      "time": "2026-11-21T14:14:28-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Listed files",
+      "status": "ok",
+      "file": null,
+      "time": "2026-11-21T14:18:26-06:00"
+    },
+    {
+      "kind": "ran",
+      "text": "Listed files",
+      "status": "ok",
+      "file": null,
+      "time": "2026-11-21T14:18:30-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "what does the articles mean",
+      "time": "2026-11-21T14:21:20-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "what does it mean to have no tools",
+      "time": "2026-11-21T14:24:55-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "ok do i answer hiow many lookips question now or until after?",
+      "time": "2026-11-21T14:25:42-06:00"
+    },
+    {
+      "kind": "asked",
+      "text": "is there a limit for lookups for the agent or can i make any predictions",
+      "time": "2026-11-21T14:26:13-06:00"
+    }
+  ],
+  "told_the_page": [
+    {
+      "time": "2026-11-21T13:54:42-06:00",
+      "kind": "status",
+      "text": "Waiting for your instructions in instructions.md"
+    },
+    {
+      "time": "2026-11-21T14:05:56-06:00",
+      "kind": "checkpoint",
+      "n": 1,
+      "text": "Your own instructions are in instructions.md, and say: how to break a claim into pieces; when to use wikidata; when to stop; when to answer \"doesn't say\""
+    },
+    {
+      "time": "2026-11-21T14:05:56-06:00",
+      "kind": "status",
+      "text": "Instructions written; waiting for you to ask for the run"
+    },
+    {
+      "time": "2026-11-21T14:06:24-06:00",
+      "kind": "status",
+      "text": "Running the agent on your 12 claims with your instructions"
+    },
+    {
+      "time": "2026-11-21T14:07:07-06:00",
+      "kind": "status",
+      "text": "Run saved; waiting for your comparison and answer"
+    }
+  ],
+  "turns": 10
+}
