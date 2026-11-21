@@ -9,7 +9,7 @@ Claude's reasoning is left out. Don't edit it by hand; the page writes it again.
 <!-- transcript-session: e03bd9c0-28c6-43f5-9c01-7da579d88ce8 | 2026-11-19T22:00:41.871Z -->
 ## Session `e03bd9c0` — 2026-11-19 22:00:41
 
-*80 user turns. Tool output shortened; reasoning omitted.*
+*84 user turns. Tool output shortened; reasoning omitted.*
 
 **User:**
 Start step 0a.
@@ -2744,6 +2744,80 @@ Yes, there's a limit: 12 lookups per claim. Your loop from 1a stops a claim once
 The question asks for the average number of lookups per claim across your 100 evaluation claims. Some claims may take only a few lookups and others may reach the limit. What number you predict, and why, is up to you.
 
 Type it under 1e in `WRITEUP.md`, in your editor.
+
+**User:**
+ok finished typing
+
+**Claude:**
+- 🔧 `Bash` — grep -n -A 20 "^## 1e" WRITEUP.md; ls runs/part2
+
+  ```
+  135:## 1e. Start the full run, and predict
+  136-
+  137-Predict the share of claims each version will get right (its verdict matches the dataset's label), as a percentage. A guess is fine; the reasons are what I grade.
+  138-
+  139-| Version | 2 articles | 3 articles | 4 articles | Why you think so |
+  140-|---|---|---|---|---|
+  141-| No tools |40 | 20|10 | Having no tools is more dificult at proving a claim, therefore I placed the percentage of claims right with no tools to be less than 50 percent, and it will decrease wi...
+  142-| One search | 50|45 | 30| One search can have some evidence to help prove a claim is right, a claim that has less articles involved, will have a higher claim right for a one search, because a ...
+  143-| Agent | 90| 80|70| I think the agent will do a good job at getting the claim right when it has less articles involved in the claim because it has less things to validate from, so it is more s...
+  144-
+  145-How many lookups will the agent make per claim, on average? Why?
+  146-
+  ... (14 more lines)
+  ```
+
+I've looked at `WRITEUP.md`. Your predictions table and your answer on lookups are both under 1e. The run has started, and `runs/part2` now has a `report.txt`, which the run saves when it ends with its two tables. Check its terminal tab to confirm it finished, and you can close that tab once it has.
+
+That finishes every step of Part 1, and this is a good place to stop for the day.
+
+The next step is 2a, "Compare accuracy." To start it, go to step 2a on the homework page and either paste its whole prompt into this chat or use its command to open a new session.
+
+**User:**
+do i push this so far
+
+**Claude:**
+- 🔧 `Bash` — git status --short; git log --oneline -5
+
+  ```
+   M WRITEUP.md
+  a51c13e Part 1 done
+  8e40c59 Part 0 updated
+  b57e1fc Part 0 done
+  4adc1b1 CLAUDE.md: the update by hand comes first, and never sends the student to the page
+  5c3c349 Update by hand: UPDATE.md, read from the class repository by a plain claude
+  ```
+
+The homework page commits your work by itself. It made a commit named "Part 0 done" and another named "Part 1 done", so your Part 1 answers are saved in git on your laptop. `WRITEUP.md` also has a few changes made after that commit. The page will include them in its next commit.
+
+I don't push from this session, because pushing sends your work to GitHub. If you want to push now, run this in your own terminal tab, in the `comp440-hw3` folder:
+
+```
+git push
+```
+
+For when the instructor expects you to push, check the README or ask the instructor.
+
+**User:**
+should i push this work now?
+
+**Claude:**
+I don't know the instructor's rule on when to push, so the README or the instructor is the place to check. Pushing now is safe, though. It copies your commits to your own fork on GitHub, which gives you a backup, and you can push again later after more work.
+
+To push, run `git push` in your own terminal tab, in the `comp440-hw3` folder.
+
+That push will include the "Part 0 done" and "Part 1 done" commits. Your latest small changes to `WRITEUP.md` aren't committed yet, so they won't go up until the page's next commit.
+
+**User:**
+does this mean everything is pushed to main? (base) ➜  comp440-hw3 git:(main) ✗ git push
+Everything up-to-date
+
+**Claude:**
+Yes, for everything that's committed. "Everything up-to-date" means your fork on GitHub already had every commit on your `main` branch, including "Part 0 done" and "Part 1 done", so there was nothing new to send. Something had already pushed them, probably the homework page.
+
+The `✗` in your prompt means you have changes that aren't committed yet. That's the latest edit to `WRITEUP.md`. It stays on your laptop until the page's next commit, and it reaches GitHub after that commit is pushed.
+
+When you're ready to go on, the next step is 2a, "Compare accuracy." Start it from the homework page.
 
 <!-- end-session: e03bd9c0-28c6-43f5-9c01-7da579d88ce8 -->
 

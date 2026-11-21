@@ -144,7 +144,7 @@ Predict the share of claims each version will get right (its verdict matches the
 
 How many lookups will the agent make per claim, on average? Why?
 
-> I predict that the agent will make 9 lookups on average. The reason
+> I predict that the agent will make 8 lookups on average. The reason is because not all claims are very difficult to validate so some might take very few lookups such as 5 or 6 lookups, meanwhile other might take 11,12, or 13 to validate, and for me the in between number is 8 lookups on average that the agent will need.
 
 # Part 2: The agent against the baselines
 
