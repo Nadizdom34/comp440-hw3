@@ -9,7 +9,7 @@ Claude's reasoning is left out. Don't edit it by hand; the page writes it again.
 <!-- transcript-session: e03bd9c0-28c6-43f5-9c01-7da579d88ce8 | 2026-11-19T22:00:41.871Z -->
 ## Session `e03bd9c0` — 2026-11-19 22:00:41
 
-*85 user turns. Tool output shortened; reasoning omitted.*
+*86 user turns. Tool output shortened; reasoning omitted.*
 
 **User:**
 Start step 0a.
@@ -2875,6 +2875,84 @@ I'm now on step 2a. I've read its brief.
 In this step you find out how often each of the three versions matched the dataset's label on your 100 evaluation claims, and compare those numbers with your predictions from 1e. It takes about 25 minutes. Your full run has finished: `runs/part2/report.txt` is there.
 
 When you're ready, ask me to paste the report into the empty block under 2a in `WRITEUP.md`.
+
+**User:**
+paste the report into the empty block under 2a in WRITEUP.md
+
+**Claude:**
+- 🔧 `Read` — /Users/logan/Documents/GitHub/comp440-hw3/runs/part2/report.txt
+
+  ```
+  1	Share of claims where the verdict matched the label:
+  2	
+  3	                          no-tools  one-search       agent
+  4	HoVer, 2 articles         20/34       18/34       19/34   
+  5	HoVer, 3 articles         24/33       17/33       25/33   
+  6	HoVer, 4 articles         18/33       17/33       19/33   
+  7	All                       62/100      52/100      63/100  
+  8	
+  9	HoVer, supported          16/50        3/50       27/50   
+  10	HoVer, not supported      46/50       49/50       36/50   
+  11	
+  12	Average per claim:
+  ... (8 more lines)
+  ```
+
+- 🔧 `Bash` — grep -n -A 20 "^## 2a" WRITEUP.md
+
+  ````
+  151:## 2a. Compare accuracy
+  152-
+  153-Ask Claude to paste the report of your full run, from `runs/part2/report.txt`, into the empty block below.
+  154-
+  155-```
+  156-```
+  157-
+  158-How do the results compare with your predictions? Where were you furthest off? Use the numbers from your run, by number of articles.
+  159-
+  160->
+  161-
+  162-Does the gap between the agent and the one-search baseline grow with the number of articles? What in the claims or the traces explains what you see?
+  ... (9 more lines)
+  ````
+
+- 🔧 `Edit` — /Users/logan/Documents/GitHub/comp440-hw3/WRITEUP.md
+
+  ```
+  The file /Users/logan/Documents/GitHub/comp440-hw3/WRITEUP.md has been updated successfully. (note: the file had been modified on disk since you last read it — the edit applied cleanly, but the fil...
+  ```
+
+- 🔧 `Bash` — python3 .workbench/page.py 2a status "Report pasted; waiting for your 2a answers"
+
+  ```
+  The page now says: Report pasted; waiting for your 2a answers
+  ```
+
+I pasted the report word for word into the empty block under 2a in `WRITEUP.md`. Here it is:
+
+```
+Share of claims where the verdict matched the label:
+
+                          no-tools  one-search       agent
+HoVer, 2 articles         20/34       18/34       19/34   
+HoVer, 3 articles         24/33       17/33       25/33   
+HoVer, 4 articles         18/33       17/33       19/33   
+All                       62/100      52/100      63/100  
+
+HoVer, supported          16/50        3/50       27/50   
+HoVer, not supported      46/50       49/50       36/50   
+
+Average per claim:
+
+                         lookups   seconds
+no-tools                     0.0       3.4
+one-search                   2.0       4.4
+agent                        5.4       8.4
+
+2 runs gave no verdict (for example a refusal, or out of lookups). They count as wrong. The results viewer lists them on this run's page, under "Claims with no verdict, or that stopped with an error".
+```
+
+Next, in the results viewer, open `runs/part2` and read "Accuracy", which shows the same counts as percentages. Then type your answers to the three 2a questions in `WRITEUP.md`, in your editor. You don't need to reply here, but you can ask me how to read any row.
 
 <!-- end-session: e03bd9c0-28c6-43f5-9c01-7da579d88ce8 -->
 

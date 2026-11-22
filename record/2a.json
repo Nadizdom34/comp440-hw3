@@ -17,18 +17,18 @@
   "answers": [
     {
       "question": "Ask Claude to paste the report of your full run, from `runs/part2/report.txt`, into the empty block below.",
-      "answer": "",
-      "written_by": null
+      "answer": "Share of claims where the verdict matched the label:\n\n                          no-tools  one-search       agent\nHoVer, 2 articles         20/34       18/34       19/34   \nHoVer, 3 articles         24/33       17/33       25/33   \nHoVer, 4 articles         18/33       17/33       19/33   \nAll                       62/100      52/100      63/100  \n\nHoVer, supported          16/50        3/50       27/50   \nHoVer, not supported      46/50       49/50       36/50   \n\nAverage per claim:\n\n                         lookups   seconds\nno-tools                     0.0       3.4\none-search                   2.0       4.4\nagent                        5.4       8.4\n\n2 runs gave no verdict (for example a refusal, or out of lookups). They count as wrong. The results viewer lists them on this run's page, under \"Claims with no verdict, or that stopped with an error\".",
+      "written_by": "Claude, in 1d's session"
     },
     {
       "question": "How do the results compare with your predictions? Where were you furthest off? Use the numbers from your run, by number of articles.",
-      "answer": "",
-      "written_by": null
+      "answer": "I'm very suprised by these results in comparison to my predictions. My prediction for the no-tools baseline was that it would get a percent of 30% accuracy with 2 articles, meanwhile the actual maximum percent was about 72.7 percent for 3 articles. I really underestimated the accuracy of the no-tools baseline. Then another suprising thing was that my prediction for the agent's accuracy was alot higher than the result, I predicted the agent would have an accuracy of 90 percent for 2 articles meanwhile the result was accuracy of 55.9 percent for 2 articles, so I was off by 45.9 percent, this was the furthest I was off from, showing how much I overestimated the agent's accuracy. Then for the one-search baseline I was not too far off from the results as the prediction for three articles was 45 percent and the result for accuracy for three article claims was 51.5 percent. Lastly, the average lookup time per claim for the agent was 5.4 which is lower than the prediction of an average of 8 lookups per claim.",
+      "written_by": "the student"
     },
     {
       "question": "Does the gap between the agent and the one-search baseline grow with the number of articles? What in the claims or the traces explains what you see?",
-      "answer": "",
-      "written_by": null
+      "answer": "The gap between the agent and one-search baseline does not grow with the number of articles because I see that for three articles the one-search baseline accuracy was 51.5 percent and the agent's three article accuracy was 75.8 percent, then as you move to 4 articles the one-search baseline's accuracy remains the same at 51.5 percent and the agent's accuracy actually decreases to 57.6 percent, disproving that the gap between them grows with the number of articles. Inside the claims I see that",
+      "written_by": "the student"
     },
     {
       "question": "The no-tools baseline read nothing. How did it do, and what does that tell you about these claims?",
@@ -50,6 +50,11 @@
       "time": "2026-11-21T18:35:13-06:00",
       "kind": "status",
       "text": "Waiting for you to ask for the report"
+    },
+    {
+      "time": "2026-11-21T18:46:22-06:00",
+      "kind": "status",
+      "text": "Report pasted; waiting for your 2a answers"
     }
   ],
   "turns": 0
