@@ -1,0 +1,39 @@
+{
+  "step": "2b",
+  "title": "Check the evidence yourself",
+  "session_id": null,
+  "conversations": [],
+  "complete": false,
+  "checkpoints": [
+    {
+      "text": "Your table and answers are in WRITEUP.md",
+      "reached": false
+    }
+  ],
+  "answers": [
+    {
+      "question": "Fill in one row for each of the first five claims in your full run, in the order of the claims file, where the agent's verdict is *supported* or *refuted*.",
+      "answer": "",
+      "written_by": null
+    },
+    {
+      "question": "Of the five, how many matched the dataset's label, and for how many of those does the quoted evidence support the verdict?",
+      "answer": "",
+      "written_by": null
+    },
+    {
+      "question": "Is accuracy alone a good measure of this agent? Why or why not?",
+      "answer": "",
+      "written_by": null
+    }
+  ],
+  "record": [],
+  "told_the_page": [
+    {
+      "time": "2026-11-21T19:02:42-06:00",
+      "kind": "status",
+      "text": "Waiting while you check the first five claims"
+    }
+  ],
+  "turns": 0
+}

@@ -9,7 +9,7 @@ Claude's reasoning is left out. Don't edit it by hand; the page writes it again.
 <!-- transcript-session: e03bd9c0-28c6-43f5-9c01-7da579d88ce8 | 2026-11-19T22:00:41.871Z -->
 ## Session `e03bd9c0` — 2026-11-19 22:00:41
 
-*86 user turns. Tool output shortened; reasoning omitted.*
+*89 user turns. Tool output shortened; reasoning omitted.*
 
 **User:**
 Start step 0a.
@@ -2953,6 +2953,128 @@ agent                        5.4       8.4
 ```
 
 Next, in the results viewer, open `runs/part2` and read "Accuracy", which shows the same counts as percentages. Then type your answers to the three 2a questions in `WRITEUP.md`, in your editor. You don't need to reply here, but you can ask me how to read any row.
+
+**User:**
+ok i fnished question 2a
+
+**Claude:**
+- 🔧 `Bash` — grep -n -A 20 "^How do the results compare with your predictions" WRITEUP.md
+
+  ```
+  177:How do the results compare with your predictions? Where were you furthest off? Use the numbers from your run, by number of articles.
+  178-
+  179-> I'm very suprised by these results in comparison to my predictions. My prediction for the no-tools baseline was that it would get a percent of 30% accuracy with 2 articles, meanwhile the actu...
+  180-
+  181-Does the gap between the agent and the one-search baseline grow with the number of articles? What in the claims or the traces explains what you see?
+  182-
+  183-> The gap between the agent and one-search baseline does not grow with the number of articles because I see that for three articles the one-search baseline accuracy was 51.5 percent and the age...
+  184-
+  185-The no-tools baseline read nothing. How did it do, and what does that tell you about these claims?
+  186-
+  187-> The no-tools baseline did quite well in comparison to the agent as the overall claim accuracy for no-tools baseline was 62 percent versus the agent's overall accuracy of 63 percent. This sugg...
+  188-
+  ... (9 more lines)
+  ```
+
+I've looked at `WRITEUP.md`, and all three 2a questions have answers. I checked each number against the report and against your 1e table. Two don't match:
+
+- **Your no-tools prediction:** your answer says you predicted 30% for 2 articles. In your 1e table, the No tools row has 40 under "2 articles".
+- **"off by 45.9 percent":** your numbers are 90% predicted and 55.9% (19/34) for the agent with 2 articles. 90 minus 55.9 is 34.1, not 45.9.
+
+The rest match the report: 72.7% (24/33), 51.5% (17/33), 75.8% (25/33), 57.6% (19/33), 62 and 63 out of 100, and 5.4 lookups. What you make of the numbers is up to you.
+
+The next step is 2b, "Check the evidence yourself." To start it, go to step 2b on the homework page and either paste its whole prompt into this chat or use its command to open a new session.
+
+**User:**
+ok check again that all number match before moving on
+
+**Claude:**
+- 🔧 `Bash` — grep -n -A 10 "^How do the results compare with your predictions" WRITEUP.md; grep -n -A 8 "^| Version | 2 articles" WRITEUP.md
+
+  ```
+  177:How do the results compare with your predictions? Where were you furthest off? Use the numbers from your run, by number of articles.
+  178-
+  179-> I'm very suprised by these results in comparison to my predictions. My prediction for the no-tools baseline was that it would get a percent of 40% accuracy with 2 articles, meanwhile the actu...
+  180-
+  181-Does the gap between the agent and the one-search baseline grow with the number of articles? What in the claims or the traces explains what you see?
+  182-
+  183-> The gap between the agent and one-search baseline does not grow with the number of articles because I see that for three articles the one-search baseline accuracy was 51.5 percent and the age...
+  184-
+  185-The no-tools baseline read nothing. How did it do, and what does that tell you about these claims?
+  186-
+  187-> The no-tools baseline did quite well in comparison to the agent as the overall claim accuracy for no-tools baseline was 62 percent versus the agent's overall accuracy of 63 percent. This sugg...
+  139:| Version | 2 articles | 3 articles | 4 articles | Why you think so |
+  ... (8 more lines)
+  ```
+
+I checked again. Every number in your 2a answers now matches the report or your 1e table:
+
+- 40% predicted for no-tools with 2 articles, as in your 1e table;
+- 72.7% for no-tools with 3 articles (24/33);
+- 90% predicted and 55.9% actual for the agent with 2 articles (19/34), a difference of 34.1;
+- 45% predicted and 51.5% actual for one-search with 3 articles (17/33);
+- 5.4 lookups actual and 8 predicted;
+- 51.5%, 75.8% and 57.6% in the second answer (17/33, 25/33, 19/33);
+- 62 and 63 out of 100 in the third answer.
+
+The next step is 2b, "Check the evidence yourself." To start it, go to step 2b on the homework page and either paste its whole prompt into this chat or use its command to open a new session.
+
+**User:**
+start step 2b
+
+**Claude:**
+- 🔧 `Bash` — ls .workbench/
+
+  ```
+  0a.json
+  0a.md
+  0b.json
+  0b.md
+  0c.json
+  0c.md
+  0d.json
+  0d.md
+  1a.json
+  1a.md
+  1b.json
+  1b.md
+  ... (18 more lines)
+  ```
+
+- 🔧 `Read` — /Users/logan/Documents/GitHub/comp440-hw3/.workbench/2b.md
+
+  ```
+  253	# This session: one step of the assignment
+  254	
+  255	You help with one step, and only this one: 2b, "Check the evidence yourself", in Part 2 (The agent against the baselines).
+  256	What this step is, as the page says it under the step's title: In this step you find out whether the agent's quoted evidence really supports its verdicts.
+  257	This step takes about 35 minutes, as the page says. Say so if the student asks.
+  258	The student talks to you in a terminal. Beside it, a web page shows every step of the assignment,
+  259	each with its own Claude Code session, and this step's instructions, which say:
+  260	
+  261	<step-instructions>
+  262	In this step you find out whether the agent's quoted evidence really supports its verdicts.
+  263	
+  264	**Words in this step:** The *evidence* is the sentences the agent quoted from Wikipedia.
+  ... (138 more lines)
+  ```
+
+- 🔧 `Bash` — python3 .workbench/page.py 2b status "Waiting while you check the first five claims"
+
+  ```
+  The page now says: Waiting while you check the first five claims
+  ```
+
+I'm now on step 2b. I've read its brief.
+
+In this step you find out whether the agent's quoted evidence really supports its verdicts. It takes about 35 minutes. A rule picks the five claims, so neither of us chooses them:
+
+1. In the results viewer ("Results" at the top of the homework page), open `runs/part2`.
+2. Click "Clear the filters".
+3. In "The agent" box, set "Verdict" to "supported or refuted", and leave "Order" at "Order of the claims file".
+4. Rows 1 to 5 are your five claims.
+
+For each claim, read every quote under "Quoted evidence", decide whether it supports the verdict, and fill in that claim's row under 2b in `WRITEUP.md`, in your editor. If you want to read more of a page as the agent read it, ask me.
 
 <!-- end-session: e03bd9c0-28c6-43f5-9c01-7da579d88ce8 -->
 

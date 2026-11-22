@@ -176,15 +176,15 @@ agent                        5.4       8.4
 
 How do the results compare with your predictions? Where were you furthest off? Use the numbers from your run, by number of articles.
 
-> I'm very suprised by these results in comparison to my predictions. My prediction for the no-tools baseline was that it would get a percent of 30% accuracy with 2 articles, meanwhile the actual maximum percent was about 72.7 percent for 3 articles. I really underestimated the accuracy of the no-tools baseline. Then another suprising thing was that my prediction for the agent's accuracy was alot higher than the result, I predicted the agent would have an accuracy of 90 percent for 2 articles meanwhile the result was accuracy of 55.9 percent for 2 articles, so I was off by 45.9 percent, this was the furthest I was off from, showing how much I overestimated the agent's accuracy. Then for the one-search baseline I was not too far off from the results as the prediction for three articles was 45 percent and the result for accuracy for three article claims was 51.5 percent. Lastly, the average lookup time per claim for the agent was 5.4 which is lower than the prediction of an average of 8 lookups per claim.
+> I'm very suprised by these results in comparison to my predictions. My prediction for the no-tools baseline was that it would get a percent of 40% accuracy with 2 articles, meanwhile the actual maximum percent was about 72.7 percent for 3 articles. I really underestimated the accuracy of the no-tools baseline. Then another suprising thing was that my prediction for the agent's accuracy was alot higher than the result, I predicted the agent would have an accuracy of 90 percent for 2 articles meanwhile the result was accuracy of 55.9 percent for 2 articles, so I was off by 34.1 percent, this was the furthest I was off on, showing how much I overestimated the agent's accuracy. Then for the one-search baseline I was not too far off from the results as the prediction for three articles was 45 percent and the result for accuracy for three article claims was 51.5 percent. Lastly, the average lookup time per claim for the agent was 5.4 which is lower than the prediction of an average of 8 lookups per claim.
 
 Does the gap between the agent and the one-search baseline grow with the number of articles? What in the claims or the traces explains what you see?
 
-> The gap between the agent and one-search baseline does not grow with the number of articles because I see that for three articles the one-search baseline accuracy was 51.5 percent and the agent's three article accuracy was 75.8 percent, then as you move to 4 articles the one-search baseline's accuracy remains the same at 51.5 percent and the agent's accuracy actually decreases to 57.6 percent, disproving that the gap between them grows with the number of articles. Inside the claims I see that 
+> The gap between the agent and one-search baseline does not grow with the number of articles because I see that for three articles the one-search baseline accuracy was 51.5 percent and the agent's three article accuracy was 75.8 percent, then as you move to 4 articles the one-search baseline's accuracy remains the same at 51.5 percent and the agent's accuracy actually decreases to 57.6 percent, disproving that the gap between them grows with the number of articles. Inside the claims I see that usually when the agent has more lookups for a claim with 4 articles it sends to match the datasets label better than the one-search baseline, but for less articles the agent and one-search baseline align a little bit closer in accuracy.
 
 The no-tools baseline read nothing. How did it do, and what does that tell you about these claims?
 
->
+> The no-tools baseline did quite well in comparison to the agent as the overall claim accuracy for no-tools baseline was 62 percent versus the agent's overall accuracy of 63 percent. This suggests that the agent did not improve the accuracy at all in this case, and it tells me that these claims can be verified of supported or not supported by a model's training data and without having to use lookups from an agent.
 
 ## 2b. Check the evidence yourself
 
@@ -192,11 +192,11 @@ Fill in one row for each of the first five claims in your full run, in the order
 
 | # | Claim (first few words) | Agent's verdict | Matched the dataset's label? | Does the quoted evidence support that verdict? | Why or why not |
 |---|---|---|---|---|---|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
+| 1 | Gregg Rolie and Rob Tyner, are not a keyboardist. | refuted| Yes| The agent states that the first part of Gregg Rolie not being a keyboardist is false, and the qouted evidence is that it states "|
+| 2 | 	Patrick Mercer was suspended in April 2014. The seat for the town was won by the owner of Eye Manor. Fiona Jones was elected MP of this town in 1997.| | supported| | |
+| 3 | Queen Medb of Connacht made her invasion in a province in the north of the island of Ireland. The Scots language is spoken in this area.| supported| | | |
+| 4 | John McTiernan is the director of 1999 American heist film in which J. Paul Boehmer appeared and stars Vonda N. McIntyre, Rene Russo and Denis Leary.| refuted| | | |
+| 5 | The Formula One World Champion is the winner of the 1963 Lombank Trophy.| supported| | | |
 
 Of the five, how many matched the dataset's label, and for how many of those does the quoted evidence support the verdict?
 
