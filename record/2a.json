@@ -1,0 +1,56 @@
+{
+  "step": "2a",
+  "title": "Compare accuracy",
+  "session_id": null,
+  "conversations": [],
+  "complete": false,
+  "checkpoints": [
+    {
+      "text": "The full run is finished",
+      "reached": true
+    },
+    {
+      "text": "The report and your answers are in WRITEUP.md",
+      "reached": false
+    }
+  ],
+  "answers": [
+    {
+      "question": "Ask Claude to paste the report of your full run, from `runs/part2/report.txt`, into the empty block below.",
+      "answer": "",
+      "written_by": null
+    },
+    {
+      "question": "How do the results compare with your predictions? Where were you furthest off? Use the numbers from your run, by number of articles.",
+      "answer": "",
+      "written_by": null
+    },
+    {
+      "question": "Does the gap between the agent and the one-search baseline grow with the number of articles? What in the claims or the traces explains what you see?",
+      "answer": "",
+      "written_by": null
+    },
+    {
+      "question": "The no-tools baseline read nothing. How did it do, and what does that tell you about these claims?",
+      "answer": "",
+      "written_by": null
+    }
+  ],
+  "record": [
+    {
+      "kind": "mark",
+      "reached": [
+        "The full run is finished"
+      ],
+      "time": "2026-11-21T14:29:01-06:00"
+    }
+  ],
+  "told_the_page": [
+    {
+      "time": "2026-11-21T18:35:13-06:00",
+      "kind": "status",
+      "text": "Waiting for you to ask for the report"
+    }
+  ],
+  "turns": 0
+}

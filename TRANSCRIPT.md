@@ -9,7 +9,7 @@ Claude's reasoning is left out. Don't edit it by hand; the page writes it again.
 <!-- transcript-session: e03bd9c0-28c6-43f5-9c01-7da579d88ce8 | 2026-11-19T22:00:41.871Z -->
 ## Session `e03bd9c0` — 2026-11-19 22:00:41
 
-*84 user turns. Tool output shortened; reasoning omitted.*
+*85 user turns. Tool output shortened; reasoning omitted.*
 
 **User:**
 Start step 0a.
@@ -2818,6 +2818,63 @@ Yes, for everything that's committed. "Everything up-to-date" means your fork on
 The `✗` in your prompt means you have changes that aren't committed yet. That's the latest edit to `WRITEUP.md`. It stays on your laptop until the page's next commit, and it reaches GitHub after that commit is pushed.
 
 When you're ready to go on, the next step is 2a, "Compare accuracy." Start it from the homework page.
+
+**User:**
+ok start step 2a
+
+**Claude:**
+- 🔧 `Bash` — ls .workbench/
+
+  ```
+  0a.json
+  0a.md
+  0b.json
+  0b.md
+  0c.json
+  0c.md
+  0d.json
+  0d.md
+  1a.json
+  1a.md
+  1b.json
+  1b.md
+  ... (16 more lines)
+  ```
+
+- 🔧 `Read` — /Users/logan/Documents/GitHub/comp440-hw3/.workbench/2a.md
+
+  ```
+  253	# This session: one step of the assignment
+  254	
+  255	You help with one step, and only this one: 2a, "Compare accuracy", in Part 2 (The agent against the baselines).
+  256	What this step is, as the page says it under the step's title: In this step you find out how often each of the three versions matched the dataset's label on your 100 evaluation claims. You comp...
+  257	This step takes about 25 minutes, as the page says. Say so if the student asks.
+  258	The student talks to you in a terminal. Beside it, a web page shows every step of the assignment,
+  259	each with its own Claude Code session, and this step's instructions, which say:
+  260	
+  261	<step-instructions>
+  262	In this step you find out how often each of the three versions matched the dataset's label on your 100
+  263	evaluation claims. You compare those numbers with your predictions from 1e.
+  264	
+  ... (138 more lines)
+  ```
+
+- 🔧 `Bash` — ls runs/part2; python3 .workbench/page.py 2a status "Waiting for you to ask for the report"
+
+  ```
+  agent.jsonl
+  no-tools.jsonl
+  one-search.jsonl
+  report.txt
+  run.json
+  The page now says: Waiting for you to ask for the report
+  ```
+
+I'm now on step 2a. I've read its brief.
+
+In this step you find out how often each of the three versions matched the dataset's label on your 100 evaluation claims, and compare those numbers with your predictions from 1e. It takes about 25 minutes. Your full run has finished: `runs/part2/report.txt` is there.
+
+When you're ready, ask me to paste the report into the empty block under 2a in `WRITEUP.md`.
 
 <!-- end-session: e03bd9c0-28c6-43f5-9c01-7da579d88ce8 -->
 
