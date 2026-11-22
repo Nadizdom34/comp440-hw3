@@ -9,7 +9,7 @@ Claude's reasoning is left out. Don't edit it by hand; the page writes it again.
 <!-- transcript-session: e03bd9c0-28c6-43f5-9c01-7da579d88ce8 | 2026-11-19T22:00:41.871Z -->
 ## Session `e03bd9c0` — 2026-11-19 22:00:41
 
-*89 user turns. Tool output shortened; reasoning omitted.*
+*90 user turns. Tool output shortened; reasoning omitted.*
 
 **User:**
 Start step 0a.
@@ -3075,6 +3075,36 @@ In this step you find out whether the agent's quoted evidence really supports it
 4. Rows 1 to 5 are your five claims.
 
 For each claim, read every quote under "Quoted evidence", decide whether it supports the verdict, and fill in that claim's row under 2b in `WRITEUP.md`, in your editor. If you want to read more of a page as the agent read it, ask me.
+
+**User:**
+ok i finished the 2b
+
+**Claude:**
+- 🔧 `Bash` — grep -n -A 20 "^## 2b" WRITEUP.md
+
+  ```
+  189:## 2b. Check the evidence yourself
+  190-
+  191-Fill in one row for each of the first five claims in your full run, in the order of the claims file, where the agent's verdict is *supported* or *refuted*.
+  192-
+  193-| # | Claim (first few words) | Agent's verdict | Matched the dataset's label? | Does the quoted evidence support that verdict? | Why or why not |
+  194-|---|---|---|---|---|---|
+  195-| 1 | Gregg Rolie and Rob Tyner, are not a keyboardist. | refuted| No | Yes| The agent states that the first part of Gregg Rolie not being a keyboardist is false, and the qouted evidence is tha...
+  196-| 2 | 	Patrick Mercer was suspended in April 2014. The seat for the town was won by the owner of Eye Manor. Fiona Jones was elected MP of this town in 1997.| | supported| Yes| No| The qouted ev...
+  197-| 3 | Queen Medb of Connacht made her invasion in a province in the north of the island of Ireland. The Scots language is spoken in this area.| supported| Yes| Yes| The qouted evidence supports...
+  198-| 4 | John McTiernan is the director of 1999 American heist film in which J. Paul Boehmer appeared and stars Vonda N. McIntyre, Rene Russo and Denis Leary.| refuted| Yes|Yes | The qouted eviden...
+  199...
+  ... (9 more lines)
+  ```
+
+I've looked at `WRITEUP.md`. All five rows and both answers are filled in. Two rows have their cells out of line with the header, which changes what the table shows:
+
+- **Row 2:** there's an empty cell right after the claim. So "Agent's verdict" is blank, "supported" lands under "Matched the dataset's label?", "Yes" under "Does the quoted evidence support that verdict?", and "No" under "Why or why not". As it stands, the row says the evidence supports the verdict, which isn't what your reason says. Remove the extra `| |` after the claim.
+- **Row 3:** there's an extra empty cell at the end, `| |`. It shows as a seventh column.
+
+Your counts, 4 of 5 matched and 3 of those 4 supported, fit your rows once row 2 is lined up.
+
+When 2b is ticked, the page commits and pushes your work as "Part 2 done". The README's Submitting section says how to submit. Part 3 is extra credit, and you start it from step 3a on the homework page.
 
 <!-- end-session: e03bd9c0-28c6-43f5-9c01-7da579d88ce8 -->
 

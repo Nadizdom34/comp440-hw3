@@ -192,19 +192,19 @@ Fill in one row for each of the first five claims in your full run, in the order
 
 | # | Claim (first few words) | Agent's verdict | Matched the dataset's label? | Does the quoted evidence support that verdict? | Why or why not |
 |---|---|---|---|---|---|
-| 1 | Gregg Rolie and Rob Tyner, are not a keyboardist. | refuted| Yes| The agent states that the first part of Gregg Rolie not being a keyboardist is false, and the qouted evidence is that it states "|
-| 2 | 	Patrick Mercer was suspended in April 2014. The seat for the town was won by the owner of Eye Manor. Fiona Jones was elected MP of this town in 1997.| | supported| | |
-| 3 | Queen Medb of Connacht made her invasion in a province in the north of the island of Ireland. The Scots language is spoken in this area.| supported| | | |
-| 4 | John McTiernan is the director of 1999 American heist film in which J. Paul Boehmer appeared and stars Vonda N. McIntyre, Rene Russo and Denis Leary.| refuted| | | |
-| 5 | The Formula One World Champion is the winner of the 1963 Lombank Trophy.| supported| | | |
+| 1 | Gregg Rolie and Rob Tyner, are not a keyboardist. | refuted| No | Yes| The agent states that the first part of Gregg Rolie not being a keyboardist is false, and the qouted evidence is that it states his WikiPedia article describing him as a keyboardist, and the qouted evidence for Robert Derminer does not mention keyboardist, but since one of the two is at least a keybaordist the agent suggest it is false and refutes it, which to me seems like a good step.|
+| 2 | Patrick Mercer was suspended in April 2014. The seat for the town was won by the owner of Eye Manor. Fiona Jones was elected MP of this town in 1997.| supported| Yes| No| The qouted evidence supports most of the claim but not all of it as it never specifies that Robert Jenick is the owner of Eye Manor, does it makes it's verdict without showing this in the qouted evidence, but does support all of the parts of the claim in the qouted evidence.|
+| 3 | Queen Medb of Connacht made her invasion in a province in the north of the island of Ireland. The Scots language is spoken in this area.| supported| Yes| Yes| The qouted evidence supports the agent's verdict as it clearly has in the first part that the Queen Medb invades Ulster and then the second evidence is that Ulster Scots is the dialect of Scots in part of Ulster spoken in parts of Nothern Island, fully supporting the claim and thus the agent's verdict of supported|
+| 4 | John McTiernan is the director of 1999 American heist film in which J. Paul Boehmer appeared and stars Vonda N. McIntyre, Rene Russo and Denis Leary.| refuted| Yes|Yes | The qouted evidence clearly states who Vonda N. McIntyre was and how she is not an actor which correctly helps refute the claim and also the agent has qouted evidence to support the rest of the claim.|
+| 5 | The Formula One World Champion is the winner of the 1963 Lombank Trophy.| supported|Yes |Yes | The qouted evidence supports the verdict as it shows who the Lombank Trophy 1963 winner is and also how he is a Formula One Champion in the second qouted evidence.|
 
 Of the five, how many matched the dataset's label, and for how many of those does the quoted evidence support the verdict?
 
->
+> Out of the five, four out of five matched the dataset's label. Then, out of these three out of four had qouted evidence that supported the verdict.
 
 Is accuracy alone a good measure of this agent? Why or why not?
 
->
+> No I do not believe accuracy alone is a good measure of this agent because as I've just seen in the agent's traces, and qouted evidence, though an agent may match verdict to the dataset's label, it's reasoning may be off or the qouted evidence may not directly state a support to the claim, but the agent then takes it and concludes on the claim's verdict. So I think purely looking at the accuracy is not a good measure, and instead looking at the process of the agent's lookups and qouted evidence provides a better sense of how an agent is doing in terms of speed, accuracy, and method of proving/disproving a claim. 
 
 # Part 3 (extra credit): Why the agent fails, and one change
 
